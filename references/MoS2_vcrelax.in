@@ -1,0 +1,46 @@
+&CONTROL
+   calculation      = 'vc-relax'
+   restart_mode     = 'from_scratch'
+   tstress          = .true.
+   tprnfor          = .true.
+   prefix           = 'MoS2'
+   pseudo_dir       = './pseudos'
+/
+&SYSTEM
+   ecutwfc          = 60
+   ecutrho          = 500
+   ntyp             = 2
+   nat              = 12
+   ibrav            = 4
+   celldm(1)        = 12.
+   celldm(3)        = 2.
+/
+&ELECTRONS
+   conv_thr         = 1e-08
+   mixing_beta      = 0.7
+/
+&IONS
+/
+&CELL
+   cell_dofree      = 'ibrav+2Dxy'
+/
+ATOMIC_SPECIES
+Mo 95.95 Mo_ONCV_PBE-1.0.oncvpsp.upf
+S 32.06 s_pbe_v1.4.uspp.F.UPF
+
+K_POINTS automatic
+1 1 1  0 0 0
+
+ATOMIC_POSITIONS angstrom
+Mo 0.0000000000 0.0000000000 11.5950000000
+S 1.5900000000 0.9179869280 13.1900000000
+S 1.5900000000 0.9179869280 10.0000000000
+Mo -1.5900000000 2.7539607840 11.5950000000
+S 0.0000000000 3.6719477120 13.1900000000
+S 0.0000000000 3.6719477120 10.0000000000
+Mo 3.1800000000 0.0000000000 11.5950000000
+S 4.7700000000 0.9179869280 13.1900000000
+S 4.7700000000 0.9179869280 10.0000000000
+Mo 1.5900000000 2.7539607840 11.5950000000
+S 3.1800000000 3.6719477120 13.1900000000
+S 3.1800000000 3.6719477120 10.0000000000
